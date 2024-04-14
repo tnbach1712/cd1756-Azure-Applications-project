@@ -889,3 +889,776 @@ Response headers:
 2024-04-12 13:37:50,553 INFO: 127.0.0.1 - - [12/Apr/2024 13:37:50] "[36mGET /static/scripts/jquery-1.10.2.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
 2024-04-12 13:37:50,574 INFO: 127.0.0.1 - - [12/Apr/2024 13:37:50] "[36mGET /static/scripts/bootstrap.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
 2024-04-12 13:37:50,577 INFO: 127.0.0.1 - - [12/Apr/2024 13:37:50] "[36mGET /static/scripts/respond.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 09:54:43,096 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://localhost:5555 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 09:54:43,096 INFO: [33mPress CTRL+C to quit[0m [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 09:55:06,678 ERROR: Exception on / [GET] [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 284, in decorated_view
+    elif not current_user.is_authenticated:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/FlaskWebProject/models.py", line 39, in load_user
+    return User.query.get(int(id))
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in get
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1136, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1145, in _get_impl
+    return self.session._get_impl(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3833, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 692, in load_on_pk_identity
+    session.execute(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3269, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2431, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (pyodbc.OperationalError) ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-04-14 09:55:06,727 INFO: 127.0.0.1 - - [14/Apr/2024 09:55:06] "[35m[1mGET / HTTP/1.1[0m" 500 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 09:55:06,756 ERROR: Error on request:
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/serving.py", line 326, in execute
+    write(data)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/serving.py", line 301, in write
+    self.wfile.write(data)
+  File "/home/bachtn/.pyenv/versions/3.12.3/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+  File "/home/bachtn/.pyenv/versions/3.12.3/lib/python3.12/ssl.py", line 1211, in sendall
+    v = self.send(byte_view[count:])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/.pyenv/versions/3.12.3/lib/python3.12/ssl.py", line 1180, in send
+    return self._sslobj.write(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2406) [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 09:55:10,796 ERROR: Exception on / [GET] [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 284, in decorated_view
+    elif not current_user.is_authenticated:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/FlaskWebProject/models.py", line 39, in load_user
+    return User.query.get(int(id))
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in get
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1136, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1145, in _get_impl
+    return self.session._get_impl(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3833, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 692, in load_on_pk_identity
+    session.execute(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3269, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2431, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (pyodbc.OperationalError) ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-04-14 09:55:10,803 INFO: 127.0.0.1 - - [14/Apr/2024 09:55:10] "[35m[1mGET / HTTP/1.1[0m" 500 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 09:55:11,137 INFO: 127.0.0.1 - - [14/Apr/2024 09:55:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:08:36,166 ERROR: Exception on / [GET] [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 284, in decorated_view
+    elif not current_user.is_authenticated:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/FlaskWebProject/models.py", line 39, in load_user
+    return User.query.get(int(id))
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in get
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1136, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1145, in _get_impl
+    return self.session._get_impl(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3833, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 692, in load_on_pk_identity
+    session.execute(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3269, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2431, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (pyodbc.OperationalError) ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-04-14 10:08:36,184 INFO: 127.0.0.1 - - [14/Apr/2024 10:08:36] "[35m[1mGET / HTTP/1.1[0m" 500 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:09:37,048 ERROR: Exception on / [GET] [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 284, in decorated_view
+    elif not current_user.is_authenticated:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/FlaskWebProject/models.py", line 39, in load_user
+    return User.query.get(int(id))
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in get
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1136, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1145, in _get_impl
+    return self.session._get_impl(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3833, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 692, in load_on_pk_identity
+    session.execute(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3269, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2431, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3293, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 167, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 678, in __init__
+    self.__connect()
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    with util.safe_reraise():
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (pyodbc.OperationalError) ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-04-14 10:09:37,062 INFO: 127.0.0.1 - - [14/Apr/2024 10:09:37] "[35m[1mGET / HTTP/1.1[0m" 500 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:31,032 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://localhost:5555 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:31,033 INFO: [33mPress CTRL+C to quit[0m [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:41,741 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:41] "GET / HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:41,808 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:41] "GET /static/content/site.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:41,809 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:41] "GET /static/scripts/jquery-1.10.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:41,809 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:41] "GET /static/content/bootstrap.min.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:41,817 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:41] "GET /static/scripts/bootstrap.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:41,819 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:41] "GET /static/scripts/respond.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:41,823 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:41] "GET /static/scripts/modernizr-2.6.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:48,124 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:48] "[32mGET /logout HTTP/1.1[0m" 302 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:57,329 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:57] "[32mGET / HTTP/1.1[0m" 302 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:57,342 DEBUG: Starting new HTTPS connection (1): login.microsoftonline.com:443 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1055]
+2024-04-14 10:10:58,331 DEBUG: https://login.microsoftonline.com:443 "GET /f958e84a-92b8-439f-a62d-4f45996b6d07/v2.0/.well-known/openid-configuration HTTP/1.1" 200 1753 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:549]
+2024-04-14 10:10:58,336 DEBUG: openid_config = {'token_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/token', 'token_endpoint_auth_methods_supported': ['client_secret_post', 'private_key_jwt', 'client_secret_basic'], 'jwks_uri': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/discovery/v2.0/keys', 'response_modes_supported': ['query', 'fragment', 'form_post'], 'subject_types_supported': ['pairwise'], 'id_token_signing_alg_values_supported': ['RS256'], 'response_types_supported': ['code', 'id_token', 'code id_token', 'id_token token'], 'scopes_supported': ['openid', 'profile', 'email', 'offline_access'], 'issuer': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/v2.0', 'request_uri_parameter_supported': False, 'userinfo_endpoint': 'https://graph.microsoft.com/oidc/userinfo', 'authorization_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/authorize', 'device_authorization_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/devicecode', 'http_logout_supported': True, 'frontchannel_logout_supported': True, 'end_session_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/logout', 'claims_supported': ['sub', 'iss', 'cloud_instance_name', 'cloud_instance_host_name', 'cloud_graph_host_name', 'msgraph_host', 'aud', 'exp', 'iat', 'auth_time', 'acr', 'nonce', 'preferred_username', 'name', 'tid', 'ver', 'at_hash', 'c_hash', 'email'], 'kerberos_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/kerberos', 'tenant_region_scope': 'NA', 'cloud_instance_name': 'microsoftonline.com', 'cloud_graph_host_name': 'graph.windows.net', 'msgraph_host': 'graph.microsoft.com', 'rbac_url': 'https://pas.windows.net'} [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/msal/authority.py:92]
+2024-04-14 10:10:58,361 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /login?next=/ HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:58,418 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /static/content/site.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:58,422 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /static/content/bootstrap.min.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:58,424 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /static/scripts/modernizr-2.6.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:58,428 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /static/images/sign-in-with-ms.svg HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:58,431 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /static/scripts/jquery-1.10.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:58,472 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /static/scripts/bootstrap.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:10:58,505 INFO: 127.0.0.1 - - [14/Apr/2024 10:10:58] "GET /static/scripts/respond.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:05,623 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:05] "GET /auth?error=consent_required&error_description=AADSTS65004:+User+declined+to+consent+to+access+the+app.+Trace+ID:+552dab1d-6c64-4c06-a8e2-cb9e6260af00+Correlation+ID:+e7bbb8a5-7e0f-4a7a-9446-e8082abceb72+Timestamp:+2024-04-14+03:11:05Z&error_uri=https://login.microsoftonline.com/error?code%3d65004&state=19121102-ffa9-4abd-9bcb-afeb9b957a55 HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:08,398 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:08] "[32mGET / HTTP/1.1[0m" 302 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:08,410 DEBUG: Starting new HTTPS connection (1): login.microsoftonline.com:443 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1055]
+2024-04-14 10:11:09,084 DEBUG: https://login.microsoftonline.com:443 "GET /f958e84a-92b8-439f-a62d-4f45996b6d07/v2.0/.well-known/openid-configuration HTTP/1.1" 200 1753 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:549]
+2024-04-14 10:11:09,088 DEBUG: openid_config = {'token_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/token', 'token_endpoint_auth_methods_supported': ['client_secret_post', 'private_key_jwt', 'client_secret_basic'], 'jwks_uri': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/discovery/v2.0/keys', 'response_modes_supported': ['query', 'fragment', 'form_post'], 'subject_types_supported': ['pairwise'], 'id_token_signing_alg_values_supported': ['RS256'], 'response_types_supported': ['code', 'id_token', 'code id_token', 'id_token token'], 'scopes_supported': ['openid', 'profile', 'email', 'offline_access'], 'issuer': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/v2.0', 'request_uri_parameter_supported': False, 'userinfo_endpoint': 'https://graph.microsoft.com/oidc/userinfo', 'authorization_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/authorize', 'device_authorization_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/devicecode', 'http_logout_supported': True, 'frontchannel_logout_supported': True, 'end_session_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/logout', 'claims_supported': ['sub', 'iss', 'cloud_instance_name', 'cloud_instance_host_name', 'cloud_graph_host_name', 'msgraph_host', 'aud', 'exp', 'iat', 'auth_time', 'acr', 'nonce', 'preferred_username', 'name', 'tid', 'ver', 'at_hash', 'c_hash', 'email'], 'kerberos_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/kerberos', 'tenant_region_scope': 'NA', 'cloud_instance_name': 'microsoftonline.com', 'cloud_graph_host_name': 'graph.windows.net', 'msgraph_host': 'graph.microsoft.com', 'rbac_url': 'https://pas.windows.net'} [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/msal/authority.py:92]
+2024-04-14 10:11:09,095 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /login?next=/ HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:09,162 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /static/content/site.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:09,165 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /static/content/bootstrap.min.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:09,168 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /static/scripts/modernizr-2.6.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:09,172 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /static/images/sign-in-with-ms.svg HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:09,175 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /static/scripts/jquery-1.10.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:09,182 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /static/scripts/bootstrap.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:09,199 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:09] "GET /static/scripts/respond.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:23,667 DEBUG: Starting new HTTPS connection (1): login.microsoftonline.com:443 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1055]
+2024-04-14 10:11:24,617 DEBUG: https://login.microsoftonline.com:443 "GET /f958e84a-92b8-439f-a62d-4f45996b6d07/v2.0/.well-known/openid-configuration HTTP/1.1" 200 1753 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:549]
+2024-04-14 10:11:24,620 DEBUG: openid_config = {'token_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/token', 'token_endpoint_auth_methods_supported': ['client_secret_post', 'private_key_jwt', 'client_secret_basic'], 'jwks_uri': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/discovery/v2.0/keys', 'response_modes_supported': ['query', 'fragment', 'form_post'], 'subject_types_supported': ['pairwise'], 'id_token_signing_alg_values_supported': ['RS256'], 'response_types_supported': ['code', 'id_token', 'code id_token', 'id_token token'], 'scopes_supported': ['openid', 'profile', 'email', 'offline_access'], 'issuer': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/v2.0', 'request_uri_parameter_supported': False, 'userinfo_endpoint': 'https://graph.microsoft.com/oidc/userinfo', 'authorization_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/authorize', 'device_authorization_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/devicecode', 'http_logout_supported': True, 'frontchannel_logout_supported': True, 'end_session_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/logout', 'claims_supported': ['sub', 'iss', 'cloud_instance_name', 'cloud_instance_host_name', 'cloud_graph_host_name', 'msgraph_host', 'aud', 'exp', 'iat', 'auth_time', 'acr', 'nonce', 'preferred_username', 'name', 'tid', 'ver', 'at_hash', 'c_hash', 'email'], 'kerberos_endpoint': 'https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/kerberos', 'tenant_region_scope': 'NA', 'cloud_instance_name': 'microsoftonline.com', 'cloud_graph_host_name': 'graph.windows.net', 'msgraph_host': 'graph.microsoft.com', 'rbac_url': 'https://pas.windows.net'} [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/msal/authority.py:92]
+2024-04-14 10:11:25,058 DEBUG: https://login.microsoftonline.com:443 "POST /f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/token HTTP/1.1" 200 5133 [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:549]
+2024-04-14 10:11:25,063 DEBUG: event={
+    "client_id": "e6fbeb6a-5586-4519-a1b7-5068d2a1dc1c",
+    "data": {
+        "client_id": "e6fbeb6a-5586-4519-a1b7-5068d2a1dc1c",
+        "code": "0.AUYASuhY-biSn0OmLU9FmWttB2rr--aGVRlFobdQaNKh3BxGAKA.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P9S80Sde1Oca1Z7vOWyTAJT99rmygpWe_FH0OS4WujriihngbiBJTdSb3oY1lqc_IBryXCPDAvpG-qM_iua_bl-vIT3jj2c1lfTCaXGwZZ6J-KmjQMANy-3UTM0Ep7Wp2H9bCVqY1CKxLCpJ0L6kBQG3Srxq2FnGXF8tW9p5P4OAnB6yjkzI-otFeHq6BFXwOMUjHj9o8Tshg3No2d-FII1ucD330YD9cBCm-xsRfLHQGSlJgeA9hm8GmpyIRbj8bkyx5cCMn1XDhE8DokNz_GjEEU8EqXssnuRSQn55oZMI_LmXeOw-u0Jds-3SrvYF2vDJTgx8naPCcRS6J6nSUMYsp2GqK4ZiC_ve9RgDbEgGGoOQGvv3tM_1DznIWzv7vAoj3L54YxHLThy6SwHooFnq3itoVKAie0-HaAwxO5hwfhKPKvnRhNTjCN8Y8a90IgalzFkVGwYNWm3Fu3nyjrQPD9xJjysDbbNCu5aq5qIeJ2zrNARqQMRSexQ9Ui7g8d9Uuen4i3_5GW_mvwzezooxC_DlnC0SS91P-fncMA8pmPbEZNQhpUEK_sZBv-aKff58SS46fM9vJ93xAWEvGm7LFQLLFck4JBdxfTrZREXTDN3zRrDk_MGATBV-EmmMJTQtubvZf9_JqOjOoG-d4iTmLKV8oS0KymHz3G2lQW1zUL8O0_Ba5vsgX-F_QI-nQHozOTGxTC5kj0VY4Bq8ME_REHVKCQwxRlF3-pl59xPhB0-oZ2hTwgXvCsWnJUF8hxcnKy870XgYPXX634ESKNvzglPoUL6IZDpyPZ9Uye4OqFxVIvf8227ni8dtPjmKnhIUNbt63nyWomhfP_1wjvBHzmf6JMZYDMpd8rEwCAjmjvjpIEZxcNhjSKXbiMEVwZvC7oLJDqB5yjPgXgFLExGEr0qDqLUXFXppiJnFetPZouL5Y-i6yxZy1WRdNUDfUBCx0IMJTxXc6Bpp1gVHonmpQCykNIRI1RKkqHn5KEjvpziq6J3bHEP7LNTSJmVXEDeZyLlnDbVQu-AgZLVZ6GE27er6-KXJyzRS26gemfUeTU59FnW6md8o-l51vU9KzgpzJ8Bqf2jD6jzQKUpiiCeFsl4tjm8PyOpUmM1m4OoElqhTlGGI-RvPPNOY4PQ94NdxCtdy9sphJZi11dZh-v2HQR-133SHvcp15Qde39OND1PxOlDESXdFJZUHTyvVCHTilC5oZopmB8VE6nj1e2Lp4OVwO0CGZumOoIQRS0sU2pQedffTXT1FXhQLQO2M3yr9fLlIDglEbbqZJNJdypXo-6q9dZ7ewMEMNSJMw",
+        "redirect_uri": "https://localhost:5555/auth",
+        "scope": [
+            "openid",
+            "profile",
+            "User.Read",
+            "offline_access"
+        ]
+    },
+    "grant_type": "authorization_code",
+    "params": null,
+    "response": {
+        "access_token": "********",
+        "client_info": "eyJ1aWQiOiIwMDAwMDAwMC0wMDAwLTAwMDAtODNiYS1kMjUwMDVmNTE1YTAiLCJ1dGlkIjoiOTE4ODA0MGQtNmM2Ny00YzViLWIxMTItMzZhMzA0YjY2ZGFkIn0",
+        "expires_in": 3740,
+        "ext_expires_in": 3740,
+        "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InEtMjNmYWxldlpoaEQzaG05Q1Fia1A1TVF5VSJ9.eyJhdWQiOiJlNmZiZWI2YS01NTg2LTQ1MTktYTFiNy01MDY4ZDJhMWRjMWMiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZjk1OGU4NGEtOTJiOC00MzlmLWE2MmQtNGY0NTk5NmI2ZDA3L3YyLjAiLCJpYXQiOjE3MTMwNjM5ODQsIm5iZiI6MTcxMzA2Mzk4NCwiZXhwIjoxNzEzMDY3ODg0LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC85MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQvIiwibmFtZSI6ImJhY2giLCJvaWQiOiI3NThlNWU0Yy05OGE5LTRlZTgtOTJhNS1hYWQwYjFjYjRmY2UiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhYmMxemJxQGdtYWlsLmNvbSIsInJoIjoiMC5BVVlBU3VoWS1iaVNuME9tTFU5Rm1XdHRCMnJyLS1hR1ZSbEZvYmRRYU5LaDNCeEdBRDAuIiwic3ViIjoiRDNNc1MybE43RGFubHdMY0wzVHh0TW1WdElzTm1yMzYwczAtQ3pkY2dSRSIsInRpZCI6ImY5NThlODRhLTkyYjgtNDM5Zi1hNjJkLTRmNDU5OTZiNmQwNyIsInV0aSI6InZLaHpKYWdKYmt1V3BBOTRfWFFiQUEiLCJ2ZXIiOiIyLjAifQ.JThunRJ1vDUl7YXlUbVrj5QAzcsu7PweUXmRLVg_4e3ed7JGYkvwKOEaq94IEnDRZxBeeg2UsWYpFm2JRzJh-CjK2zQJzl9YcOXuoLCGmOrqz61Vwf0IgBN6XCJJlCqPElVKNIuy70IhL0F_AFgYeXkKDihrmoHt9cy3eEHUCsZKphV2vmB81Yqb0Tv8u794fDy-Z9KCDbCoI30s11Rhc6TBLUAqHGNzPBt7g15sRnbAUmGqSjI707wtEEkN62JNyEOzv9NqzNzlQfulbsvdtY1_ieaKojQkpMScsDiYy2e3gRWtOYZyjdO_G4c6drEjKleHwiwGkdtDbCOC3y58ew",
+        "refresh_token": "********",
+        "scope": "openid profile User.Read email",
+        "token_type": "Bearer"
+    },
+    "scope": [
+        "openid",
+        "profile",
+        "User.Read",
+        "email"
+    ],
+    "token_endpoint": "https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07/oauth2/v2.0/token"
+} [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/msal/token_cache.py:116]
+2024-04-14 10:11:25,672 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:25] "[32mGET /auth?code=0.AUYASuhY-biSn0OmLU9FmWttB2rr--aGVRlFobdQaNKh3BxGAKA.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P9S80Sde1Oca1Z7vOWyTAJT99rmygpWe_FH0OS4WujriihngbiBJTdSb3oY1lqc_IBryXCPDAvpG-qM_iua_bl-vIT3jj2c1lfTCaXGwZZ6J-KmjQMANy-3UTM0Ep7Wp2H9bCVqY1CKxLCpJ0L6kBQG3Srxq2FnGXF8tW9p5P4OAnB6yjkzI-otFeHq6BFXwOMUjHj9o8Tshg3No2d-FII1ucD330YD9cBCm-xsRfLHQGSlJgeA9hm8GmpyIRbj8bkyx5cCMn1XDhE8DokNz_GjEEU8EqXssnuRSQn55oZMI_LmXeOw-u0Jds-3SrvYF2vDJTgx8naPCcRS6J6nSUMYsp2GqK4ZiC_ve9RgDbEgGGoOQGvv3tM_1DznIWzv7vAoj3L54YxHLThy6SwHooFnq3itoVKAie0-HaAwxO5hwfhKPKvnRhNTjCN8Y8a90IgalzFkVGwYNWm3Fu3nyjrQPD9xJjysDbbNCu5aq5qIeJ2zrNARqQMRSexQ9Ui7g8d9Uuen4i3_5GW_mvwzezooxC_DlnC0SS91P-fncMA8pmPbEZNQhpUEK_sZBv-aKff58SS46fM9vJ93xAWEvGm7LFQLLFck4JBdxfTrZREXTDN3zRrDk_MGATBV-EmmMJTQtubvZf9_JqOjOoG-d4iTmLKV8oS0KymHz3G2lQW1zUL8O0_Ba5vsgX-F_QI-nQHozOTGxTC5kj0VY4Bq8ME_REHVKCQwxRlF3-pl59xPhB0-oZ2hTwgXvCsWnJUF8hxcnKy870XgYPXX634ESKNvzglPoUL6IZDpyPZ9Uye4OqFxVIvf8227ni8dtPjmKnhIUNbt63nyWomhfP_1wjvBHzmf6JMZYDMpd8rEwCAjmjvjpIEZxcNhjSKXbiMEVwZvC7oLJDqB5yjPgXgFLExGEr0qDqLUXFXppiJnFetPZouL5Y-i6yxZy1WRdNUDfUBCx0IMJTxXc6Bpp1gVHonmpQCykNIRI1RKkqHn5KEjvpziq6J3bHEP7LNTSJmVXEDeZyLlnDbVQu-AgZLVZ6GE27er6-KXJyzRS26gemfUeTU59FnW6md8o-l51vU9KzgpzJ8Bqf2jD6jzQKUpiiCeFsl4tjm8PyOpUmM1m4OoElqhTlGGI-RvPPNOY4PQ94NdxCtdy9sphJZi11dZh-v2HQR-133SHvcp15Qde39OND1PxOlDESXdFJZUHTyvVCHTilC5oZopmB8VE6nj1e2Lp4OVwO0CGZumOoIQRS0sU2pQedffTXT1FXhQLQO2M3yr9fLlIDglEbbqZJNJdypXo-6q9dZ7ewMEMNSJMw&state=ed38829a-301a-4adb-8707-2fed33eaa56e&session_state=952b1b3b-4619-4f60-af0d-e3e8137b4862 HTTP/1.1[0m" 302 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:26,697 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:26] "GET /home HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:26,784 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:26] "GET /static/content/site.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:26,793 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:26] "GET /static/content/bootstrap.min.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:26,798 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:26] "GET /static/scripts/modernizr-2.6.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:26,801 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:26] "GET /static/scripts/jquery-1.10.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:26,802 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:26] "GET /static/scripts/bootstrap.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:26,805 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:26] "GET /static/scripts/respond.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:31,407 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:31] "GET /post/1 HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:31,461 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:31] "[36mGET /static/content/bootstrap.min.css HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:31,464 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:31] "[36mGET /static/content/site.css HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:31,467 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:31] "[36mGET /static/scripts/modernizr-2.6.2.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:31,470 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:31] "[36mGET /static/scripts/jquery-1.10.2.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:31,473 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:31] "[36mGET /static/scripts/bootstrap.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:11:31,476 INFO: 127.0.0.1 - - [14/Apr/2024 10:11:31] "[36mGET /static/scripts/respond.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:36:58,897 INFO: 127.0.0.1 - - [14/Apr/2024 10:36:58] "GET /post/1 HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:36:59,009 INFO: 127.0.0.1 - - [14/Apr/2024 10:36:59] "GET /static/content/bootstrap.min.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:36:59,014 INFO: 127.0.0.1 - - [14/Apr/2024 10:36:59] "GET /static/content/site.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:36:59,020 INFO: 127.0.0.1 - - [14/Apr/2024 10:36:59] "GET /static/scripts/modernizr-2.6.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:36:59,027 INFO: 127.0.0.1 - - [14/Apr/2024 10:36:59] "GET /static/scripts/jquery-1.10.2.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:36:59,090 INFO: 127.0.0.1 - - [14/Apr/2024 10:36:59] "GET /static/scripts/bootstrap.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:36:59,095 INFO: 127.0.0.1 - - [14/Apr/2024 10:36:59] "GET /static/scripts/respond.js HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:09,347 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:09] "[33mGET /post HTTP/1.1[0m" 404 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:11,570 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:11] "[33mGET /posts HTTP/1.1[0m" 404 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:14,540 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:14] "[33mGET /posts HTTP/1.1[0m" 404 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:18,352 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:18] "GET / HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:18,416 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:18] "GET /static/content/bootstrap.min.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:18,419 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:18] "GET /static/content/site.css HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:18,423 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:18] "[36mGET /static/scripts/modernizr-2.6.2.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:18,425 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:18] "[36mGET /static/scripts/jquery-1.10.2.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:18,430 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:18] "[36mGET /static/scripts/bootstrap.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:18,433 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:18] "[36mGET /static/scripts/respond.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:20,912 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:20] "GET /post/1 HTTP/1.1" 200 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:20,979 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:20] "[36mGET /static/content/bootstrap.min.css HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:20,982 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:20] "[36mGET /static/content/site.css HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:20,986 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:20] "[36mGET /static/scripts/modernizr-2.6.2.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:20,988 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:20] "[36mGET /static/scripts/jquery-1.10.2.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:21,003 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:21] "[36mGET /static/scripts/bootstrap.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]
+2024-04-14 10:38:21,005 INFO: 127.0.0.1 - - [14/Apr/2024 10:38:21] "[36mGET /static/scripts/respond.js HTTP/1.1[0m" 304 - [in /home/bachtn/learn/azure/nd081/cd1756-Azure-Applications-project/.venv/lib/python3.12/site-packages/werkzeug/_internal.py:96]

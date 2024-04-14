@@ -26,7 +26,7 @@ def get_users():
 
 ### PUBLIC PROPERTIES ###
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://bachtn:!6Den10kytu@bachtn-db.database.windows.net/bachtnsqlserver01?driver=ODBC+Driver+17+for+SQL+Server'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://bachtn:!6Den10kytu@bachtn.database.windows.net/bachtn?driver=ODBC+Driver+17+for+SQL+Server'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)

@@ -64,8 +64,6 @@ class Post(db.Model):
             Randomfilename = id_generator();
             filename = Randomfilename + '.' + fileextension;
             try:
-                print(filename)
-                print('update2')
                 # blob_service.create_blob_from_stream(blob_container, filename, file)
                 blob_client = blob_service.get_blob_client(blob=filename, container=blob_container)
                 blob_client.upload_blob(file.read(), overwrite=True)
