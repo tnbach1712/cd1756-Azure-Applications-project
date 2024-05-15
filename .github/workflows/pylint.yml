@@ -18,8 +18,12 @@ jobs:
       run: |
         echo "hello"
         echo "${{ secrets.DEMO }}"
+        echo env
         # python -m pip install --upgrade pip
         # pip install pylint
+
+      env:
+        GH_TOKEN: ${{ secrets.DEMO }}
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
